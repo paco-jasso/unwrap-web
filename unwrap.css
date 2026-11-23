@@ -8,8 +8,8 @@
 :root {
   color-scheme: light;
   font-family: system-ui, sans-serif;
-  color: #302448;
-  background: #211633;
+  color: #173451;
+  background: #152d4b;
 }
 
 * { box-sizing: border-box; }
@@ -21,15 +21,15 @@ body {
   display: grid;
   place-items: center;
   padding: 1.25rem;
-  background: radial-gradient(ellipse at top, #533b73, #211633 75%);
+  background: radial-gradient(ellipse at top, #32699d, #152d4b 75%);
 }
 
 .invitation {
   width: min(100%, 33rem);
   padding: clamp(1.5rem, 7vw, 3.75rem);
-  border: 1px solid #d9c7ee;
+  border: 1px solid #c3d8eb;
   border-radius: 1.5rem;
-  background: #fcf8ff;
+  background: #f4f9ff;
   text-align: center;
   box-shadow: 0 1rem 3rem #081b1690;
 }
@@ -40,7 +40,7 @@ body {
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
-  background: #ecdefb;
+  background: #dcebf9;
   font-size: 2.5rem;
 }
 
@@ -59,21 +59,26 @@ p { line-height: 1.55; }
 
 #instruction { margin-top: 0; }
 
+#budget {
+  margin: .5rem 0 1rem;
+  font-weight: 700;
+}
+
 button {
   margin-top: .75rem;
   min-height: 3rem;
   padding: .75rem 1.5rem;
   border: 0;
   border-radius: .75rem;
-  background: #603982;
+  background: #245f96;
   color: white;
   font: inherit;
   font-weight: 700;
   cursor: pointer;
 }
 
-button:hover { background: #4a2969; }
-button:focus-visible { outline: 3px solid #302448; outline-offset: 4px; }
+button:hover { background: #1d4c78; }
+button:focus-visible { outline: 3px solid #173451; outline-offset: 4px; }
 button:disabled { cursor: wait; }
 
 .christmas {

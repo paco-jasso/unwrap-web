@@ -9,13 +9,13 @@
   <title>Unwrapp</title>
   <meta name="description" content="Open your invitation to reveal what is inside.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="🎁 Unwrap Your Invitation">
+  <meta property="og:title" content="🎁 Your Unwrapp Invitation">
   <meta property="og:description" content="Your surprise is ready. Tap to open your invitation!">
   <meta property="og:url" content="https://paco-jasso.github.io/unwrap-web/">
-  <meta property="og:image" content="https://paco-jasso.github.io/unwrap-web/unwrap-preview.png">
+  <meta property="og:image" content="https://paco-jasso.github.io/unwrap-web/unwrap-preview.png?v=2">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="A wrapped gift and the words Unwrap and Your invitation is ready">
+  <meta property="og:image:alt" content="A soft blue gift icon and the words Unwrapp and Your invitation is ready">
   <link rel="stylesheet" href="./unwrap.css">
   <script src="./unwrap.js" defer></script>
 </head>
@@ -25,6 +25,7 @@
     <h1>Unwrapp</h1>
     <p class="welcome">Welcome<strong id="guest-name"></strong></p>
     <p id="instruction">Your secret is wrapped and ready.</p>
+    <p id="budget" hidden></p>
     <button id="reveal" type="button" hidden>Unwrap my giftee</button>
     <div id="result" role="status" aria-atomic="true"></div>
     <button id="hide-reveal" type="button" hidden>Hide my giftee</button>
