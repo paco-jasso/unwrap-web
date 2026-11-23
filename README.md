@@ -4,7 +4,6 @@
 
 This repository hosts the web experience. The planned `unwrap-android` organizer app will generate invitations and open a prefilled WhatsApp message for the organizer to review and send.
 
-![Unwrap preview with a wrapped gift](./unwrap-preview.png)
 
 ## Choose a template
 
