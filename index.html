@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="no-referrer">
   <meta name="robots" content="noindex">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
-  <title>Unwrap</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+  <title>Unwrapp</title>
   <meta name="description" content="Open your invitation to reveal what is inside.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="🎁 Unwrap Your Invitation">
@@ -22,10 +22,12 @@
 <body>
   <main class="invitation">
     <span class="gift" aria-hidden="true">🎁</span>
-    <h1>Unwrap</h1>
-    <p id="instruction">Your surprise is wrapped and ready.</p>
-    <button id="reveal" type="button" hidden>Unwrap my invitation</button>
+    <h1>Unwrapp</h1>
+    <p class="welcome">Welcome<strong id="guest-name"></strong></p>
+    <p id="instruction">Your secret is wrapped and ready.</p>
+    <button id="reveal" type="button" hidden>Unwrap my giftee</button>
     <div id="result" role="status" aria-atomic="true"></div>
+    <button id="hide-reveal" type="button" hidden>Hide my giftee</button>
     <noscript>Enable JavaScript in your browser to open your invitation.</noscript>
   </main>
 </body>

@@ -1,3 +1,10 @@
+@font-face {
+  font-family: Nonchalance;
+  src: url("./fonts/Nonchalance-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-display: swap;
+}
+
 :root {
   color-scheme: light;
   font-family: system-ui, sans-serif;
@@ -38,11 +45,19 @@ body {
 }
 
 h1 {
-  font: 700 clamp(2.5rem, 9vw, 4rem) / 1.05 Georgia, serif;
-  margin: 1rem 0;
+  font: 700 clamp(2.5rem, 9vw, 4rem) / 1.05 Nonchalance, system-ui, sans-serif;
+  margin: 1rem 0 1.5rem;
 }
 
 p { line-height: 1.55; }
+
+.welcome {
+  margin: 0 0 .25rem;
+  font-size: .9375rem;
+  overflow-wrap: anywhere;
+}
+
+#instruction { margin-top: 0; }
 
 button {
   margin-top: .75rem;
@@ -72,10 +87,77 @@ button:disabled { cursor: wait; }
 .christmas button:hover { background: #782134; }
 .christmas button:focus-visible { outline-color: #183b31; }
 
+.valentines {
+  color: #551f45;
+  background: radial-gradient(ellipse at top, #a63876, #421433 75%);
+}
+
+.valentines .invitation { background: #fff6fa; border-color: #edbfd8; }
+.valentines .gift { background: #f8dce9; }
+.valentines button { background: #8b2b64; }
+.valentines button:hover { background: #6c204d; }
+.valentines button:focus-visible { outline-color: #551f45; }
+
+#hide-reveal {
+  background: #ecebea;
+  color: #525056;
+  font-weight: 600;
+}
+
+#hide-reveal:hover { background: #e0dfde; }
+
+.celebration {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.celebration span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.snowfall span {
+  width: .4rem;
+  height: .4rem;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 .2rem #718eac;
+}
+
+.confetti span {
+  width: .38rem;
+  height: .7rem;
+  border-radius: .08rem;
+  background: #d9447c;
+}
+
+.confetti span:nth-child(4n + 2) { background: #f4ad37; }
+.confetti span:nth-child(4n + 3) { background: #26a98e; }
+.confetti span:nth-child(4n + 4) { background: #7355ce; }
+
+.hearts span {
+  color: #e46ca8;
+  font-size: 1rem;
+  line-height: 1;
+  text-shadow: 0 0 .15rem #711749;
+}
+
+.hearts span:nth-child(3n + 2) { color: #ffb4d7; }
+.hearts span:nth-child(3n + 3) { color: #bf407b; }
+
+@media (prefers-reduced-motion: reduce) {
+  .celebration { display: none; }
+}
+
 #result { overflow-wrap: anywhere; }
 #result strong {
   display: block;
   margin-top: .5rem;
   white-space: pre-line;
-  font: 700 clamp(1.75rem, 7vw, 2.75rem) / 1.15 Georgia, serif;
+  font: 700 clamp(1.75rem, 7vw, 2.75rem) / 1.15 Nonchalance, system-ui, sans-serif;
 }
