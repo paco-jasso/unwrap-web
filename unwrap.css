@@ -111,6 +111,22 @@ button:disabled { cursor: wait; }
 
 #hide-reveal:hover { background: #e0dfde; }
 
+.wishlist {
+  margin-top: 1.25rem;
+  border-top: 1px solid currentColor;
+  padding-top: .85rem;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+.wishlist summary { cursor: pointer; font-weight: 700; }
+.wishlist h2 { font-size: 1.1rem; }
+.wishlist p:empty { display: none; }
+.wishlist fieldset { min-width: 0; margin: .75rem 0; border: 1px solid #b9b9b9; border-radius: .75rem; }
+.wishlist input { width: 100%; margin: .25rem 0; padding: .5rem; font: inherit; }
+.wishlist button { min-height: 2.5rem; padding: .45rem .8rem; margin-right: .35rem; }
+.wishlist a { color: inherit; }
+
 .celebration {
   position: fixed;
   inset: 0;
