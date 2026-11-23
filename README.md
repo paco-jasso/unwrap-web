@@ -11,8 +11,8 @@ This repository hosts the web experience for the Unwrap mobile app.
 | Template | Use it for | Page | Reveal button |
 | --- | --- | --- | --- |
 | General | Event details, announcements, and short surprises | `/` | **Unwrap my giftee** |
-| Christmas | A Secret Santa assignment | `/christmas.html` | **Reveal my Secret Santa** |
-| Valentine's | Valentine's day events | `/valentines.html` | **Reveal my Valentine** |
+| Christmas | A Secret Santa assignment | `/christmas.html` | **Unwrap my Secret Santa** |
+| Valentine's | Valentine's day events | `/valentines.html` | **Unwrap my Valentine** |
 
 Each template has its own WhatsApp preview title and artwork. The preview shows the template branding. The assignment or surprise is revealed in the browser after the guest taps the button.
 
