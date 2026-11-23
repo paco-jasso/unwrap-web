@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+  <title>Unwrapp · Secret Santa</title>
+  <meta name="description" content="Open your invitation to find out who you're shopping for.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="🎄 Unwrap Your Secret Santa">
+  <meta property="og:description" content="Your Secret Santa assignment is ready. Tap to open your invitation!">
+  <meta property="og:url" content="https://paco-jasso.github.io/unwrap-web/christmas.html">
+  <meta property="og:image" content="https://paco-jasso.github.io/unwrap-web/unwrap-christmas-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="A wrapped gift and the words Unwrap and Secret Santa">
+  <link rel="stylesheet" href="./unwrap.css">
+  <script src="./unwrap.js" defer></script>
+</head>
+<body class="christmas">
+  <main class="invitation">
+    <span class="gift" aria-hidden="true">🎄</span>
+    <h1>Unwrapp</h1>
+    <p class="welcome">Welcome<strong id="guest-name"></strong></p>
+    <p id="instruction">Your Secret Santa wrapped and ready.</p>
+    <button id="reveal" type="button" hidden>Unwrap my Secret Santa</button>
+    <div id="result" role="status" aria-atomic="true"></div>
+    <button id="hide-reveal" type="button" hidden>Hide my Santa</button>
+    <noscript>Enable JavaScript in your browser to open your invitation.</noscript>
+  </main>
+</body>
+</html>
