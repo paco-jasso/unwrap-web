@@ -7,17 +7,25 @@ const { positionals, values } = parseArgs({
     christmas: { type: "boolean" },
     valentines: { type: "boolean" },
     gifter: { type: "string" },
+    budget: { type: "string" },
   },
 });
 const [page, revealText] = positionals;
 const recipient = revealText?.trim();
 const gifter = values.gifter?.trim();
+const amount = values.budget?.trim();
 
 if (positionals.length !== 2 || !page || !recipient || recipient.length > 200 ||
     (values.christmas && values.valentines) ||
-    (values.gifter !== undefined && (!gifter || gifter.length > 80))) {
-  console.error('Usage: node tools/make-unwrap-link.mjs <site-root-url> "Reveal text" [--gifter "Guest Name"] [--christmas | --valentines]');
+    (values.gifter !== undefined && (!gifter || gifter.length > 80)) ||
+    (amount !== undefined && !/^\d{1,7}(?:\.\d{1,2})?$/.test(amount))) {
+  console.error('Usage: node tools/make-unwrap-link.mjs <site-root-url> "Reveal text" [--gifter "Guest Name"] [--budget 500.50] [--christmas | --valentines]');
   process.exit(1);
+}
+let budget;
+if (amount !== undefined) {
+  const [whole, cents = ""] = amount.split(".");
+  budget = Number(whole) * 100 + Number(cents.padEnd(2, "0"));
 }
 
 const url = new URL(page);
@@ -36,7 +44,7 @@ const iv = randomBytes(12);
 const cipher = createCipheriv("aes-256-gcm", key, iv);
 cipher.setAAD(Buffer.from("secret-santa:v1", "utf8"));
 const sealed = Buffer.concat([
-  cipher.update(JSON.stringify({ recipient, gifter }), "utf8"),
+  cipher.update(JSON.stringify({ recipient, gifter, budget }), "utf8"),
   cipher.final(),
   cipher.getAuthTag(),
 ]);

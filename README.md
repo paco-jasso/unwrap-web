@@ -43,6 +43,8 @@ The browser decrypts the payload on page load to show the guest’s name, when p
 
 The v1 payload accepts an optional `gifter` string alongside `recipient`. Use 1–80 UTF-16 code units after trimming. Add `--gifter "Paco"` to a link generator command to show **Welcome Paco** in any template.
 
+The payload also accepts an optional `budget` integer in hundredths, from 0 through 999999999. For example, `--budget 500.50` encodes `50050` and shows **Gift budget: $500.50**. Older invitations without that field still work.
+
 AES-GCM detects changes to the ciphertext under the same key. The sending chat provides the guest’s context for who sent it, since anyone can generate a new link with their own key. Invitations are reusable and there is no individual revocation.
 
 ## Font credit

@@ -5,6 +5,7 @@ const hideButton = document.querySelector("#hide-reveal");
 const instruction = document.querySelector("#instruction");
 const result = document.querySelector("#result");
 const guestName = document.querySelector("#guest-name");
+const budget = document.querySelector("#budget");
 const fragment = location.hash.slice(1);
 
 function decodeBase64Url(value) {
@@ -77,6 +78,11 @@ async function prepareInvitation(match) {
 
     if (typeof payload.gifter === "string" && payload.gifter.length <= 80 && payload.gifter.trim()) {
       guestName.textContent = " " + payload.gifter.trim();
+    }
+    if (Number.isSafeInteger(payload.budget) && payload.budget >= 0 && payload.budget <= 999999999) {
+      const amount = payload.budget / 100;
+      budget.textContent = "Gift budget: $" + amount.toFixed(payload.budget % 100 === 0 ? 0 : 2);
+      budget.hidden = false;
     }
     let celebration;
     button.hidden = false;
