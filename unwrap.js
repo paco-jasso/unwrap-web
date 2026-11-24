@@ -153,7 +153,8 @@ function addWishlists(access) {
   own.append(make("summary", "My wishlist"), status, form);
 
   function giftField({ name = "", url = "" } = {}) {
-    const row = make("fieldset");
+    const row = make("div");
+    row.className = "wishlist-item";
     const nameInput = make("input");
     nameInput.maxLength = 120;
     nameInput.value = name;
@@ -165,8 +166,15 @@ function addWishlists(access) {
     link.value = url;
     link.setAttribute("aria-label", "Product link (optional)");
     link.placeholder = "Product link (optional)";
-    const remove = make("button", "Remove");
+    const remove = make("button");
     remove.type = "button";
+    remove.className = "wishlist-remove";
+    remove.setAttribute("aria-label", "Remove gift idea");
+    remove.title = "Remove gift idea";
+    const trash = make("span");
+    trash.className = "trash-icon";
+    trash.setAttribute("aria-hidden", "true");
+    remove.append(trash);
     remove.addEventListener("click", () => {
       row.remove();
       add.disabled = false;
