@@ -93,14 +93,14 @@ async function prepareInvitation(match) {
       instruction.hidden = true;
       button.hidden = true;
       result.replaceChildren("You’re shopping for", revealedText);
-      wishlist?.showGiftee();
+      wishlist?.show();
       hideButton.hidden = false;
       hideButton.focus();
       celebration = startCelebration();
     });
     hideButton.addEventListener("click", () => {
       result.replaceChildren();
-      wishlist?.hideGiftee();
+      wishlist?.hide();
       celebration?.remove();
       hideButton.hidden = true;
       instruction.hidden = false;
@@ -140,6 +140,7 @@ function addWishlists(access) {
 
   const own = make("details");
   own.className = "wishlist";
+  own.hidden = true;
   const form = make("form");
   const status = make("p");
   status.setAttribute("role", "status");
@@ -234,7 +235,8 @@ function addWishlists(access) {
   document.querySelector("#hide-reveal").after(own);
   let generation = 0;
   return {
-    async showGiftee() {
+    async show() {
+      own.hidden = false;
       giftee.hidden = false;
       const current = ++generation;
       list.replaceChildren();
@@ -258,8 +260,9 @@ function addWishlists(access) {
         if (current === generation) gifteeStatus.textContent = "Could not load gift ideas. Try revealing again.";
       }
     },
-    hideGiftee() {
+    hide() {
       generation++;
+      own.hidden = true;
       giftee.hidden = true;
       list.replaceChildren();
     },
