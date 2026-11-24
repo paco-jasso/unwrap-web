@@ -146,9 +146,14 @@ function addWishlists(access) {
   const fields = make("div");
   const add = make("button", "Add gift idea");
   add.type = "button";
+  add.className = "wishlist-secondary";
   const save = make("button", "Save wishlist");
   save.type = "submit";
-  form.append(fields, add, save);
+  save.className = "wishlist-save";
+  const actions = make("div");
+  actions.className = "wishlist-actions";
+  actions.append(add, save);
+  form.append(fields, actions);
   form.hidden = true;
   own.append(make("summary", "My wishlist"), status, form);
 
@@ -168,7 +173,7 @@ function addWishlists(access) {
     link.placeholder = "Product link (optional)";
     const remove = make("button");
     remove.type = "button";
-    remove.className = "wishlist-remove";
+    remove.className = "wishlist-remove wishlist-secondary";
     remove.setAttribute("aria-label", "Remove gift idea");
     remove.title = "Remove gift idea";
     const trash = make("span");
